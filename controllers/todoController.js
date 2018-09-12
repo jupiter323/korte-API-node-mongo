@@ -5,7 +5,7 @@ var mongoose=require("mongoose");
 var urlencodedParser=bodyParser.urlencoded({extended:false});
 //var data =[{item:"Javascript"}, {item:"node.js"}, {item:"react.js"}];
 
-mongoose.connect("mongodb://test:test@ds147537.mlab.com:47537/todo", ()=>{
+mongoose.connect("mongodb://reema:reemathitha911@ds151612.mlab.com:51612/kortedb", ()=>{
   console.log("Connecting to global MongoDB was successful!");
 });//connect to global DB
 
