@@ -5,13 +5,13 @@ var mongoose=require("mongoose");
 var urlencodedParser=bodyParser.urlencoded({extended:false});
 //var data =[{item:"Javascript"}, {item:"node.js"}, {item:"react.js"}];
 
-// mongoose.connect("mongodb://test:test@ds147537.mlab.com:47537/todo", ()=>{
-//   console.log("Connecting to global MongoDB was successful!");
-// });//connect to global DB
+mongoose.connect("mongodb://test:test@ds147537.mlab.com:47537/todo", ()=>{
+  console.log("Connecting to global MongoDB was successful!");
+});//connect to global DB
 
-mongoose.connect("mongodb://localhost:27017/todo", ()=>{
-  console.log("Connecting to local MongoDB was successful!");
-});//connect to local DB
+// mongoose.connect("mongodb://localhost:27017/todo", ()=>{
+//   console.log("Connecting to local MongoDB was successful!");
+// });//connect to local DB
 
 var todoSchema= new mongoose.Schema({
   item: String
