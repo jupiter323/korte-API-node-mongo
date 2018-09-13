@@ -14,7 +14,10 @@ mongoose.connect("mongodb://reema:reemathitha911@ds151612.mlab.com:51612/kortedb
 // });//connect to local DB
 
 var todoSchema= new mongoose.Schema({
-  item: String
+  name: String,
+  email: String,
+  withfb:Boolean,
+  withem:Boolean
 });//create a schema(a blueprint) for what the DB can expect with our data
 var Todo=mongoose.model("Todo", todoSchema);//allows to create new todos and push them to the DB
 
