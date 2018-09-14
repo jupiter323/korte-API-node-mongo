@@ -10,12 +10,14 @@
     <h3>Click on the items to delete them</h3>
     <div id="todo-table">
       <form>
-        <input type="text" name="item" placeholder="Add new item..." required/>
+        <input type="text" name="name" placeholder="user name" required/>
+        <input type="email" name="email" placeholder="email" required/>
+        <input type="password" name="password" placeholder="password" required/>
         <button type="submit">Add users</button>
       </form>
       <ul>
-        <% for(var i=0;i<todos.length;i++){ %>
-          <li><%=todos[i].name%></li>
+        <% for(var i=0;i<users.length;i++){ %>
+          <li><%=users[i].name%></li>
         <%}%>
       </ul>
     </div>

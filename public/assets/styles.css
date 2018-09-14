@@ -20,11 +20,12 @@ body{
     clear: both;
 }
 
-input[type="text"]{
+input[type="text"],[type="password"],[type="email"]{
     width: 70%;
     padding: 20px;
     background:#181c22;
-    border: 0;
+    border: 1;
+    border-color: #090d13;
     float: left;
     font-size: 20px;
     color: #989898;
