@@ -24,8 +24,6 @@ app.use(express.static("./public"));//serve static content for the app from the 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-
-
 app.listen(port, ()=>{
   console.log("Listening on Port: "+port);
 });//listen to port

@@ -45,7 +45,6 @@ exports.user_add = (req, res) => {
       });
     }
   });
-
 };
 
 exports.user_login = (req, res) => {  
