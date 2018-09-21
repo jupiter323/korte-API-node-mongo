@@ -11,6 +11,20 @@ exports.index = (req, res) => {
   });
 };
 
+exports.uploadprofileimage = (req, res) => {
+  if (!req.files)
+    return res.status(400).send('No files were uploaded.');
+
+  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+  let avatarImage = req.files.avatarImage;
+
+  // Use the mv() method to place the file somewhere on your server
+  avatarImage.mv('/resources/images/user'+new Date().getTime()+ Math.floor(Math.random() * 100000)+'.jpg', function (err) {
+    if (err)
+      return res.status(500).send(err);
+    res.send('File uploaded!');
+  });
+}
 
 exports.user_list = (req, res) => {
   User.find({}, (err, users) => {
@@ -47,7 +61,7 @@ exports.user_add = (req, res) => {
   });
 };
 
-exports.user_login = (req, res) => {  
+exports.user_login = (req, res) => {
   User.find({ email: req.body.email }, (err, user) => {
     if (err) throw err;
     if (user.length != 0) {
