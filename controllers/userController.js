@@ -27,6 +27,7 @@ exports.uploadprofileimage = (req, res) => {
 }
 
 exports.user_list = (req, res) => {
+  
   User.find({}, (err, users) => {
     if (err) throw err;
     res.json(users);
