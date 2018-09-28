@@ -1,7 +1,7 @@
 //Set up mongoose connection
 var mongoose = require('mongoose');
-// var mongoDB = "mongodb://reema:reemathitha911@ds151612.mlab.com:51612/kortedb";
-var mongoDB = "mongodb://localhost:27017/Korte";
+var mongoDB = "mongodb://reema:reemathitha911@ds151612.mlab.com:51612/kortedb";
+// var mongoDB = "mongodb://localhost:27017/Korte";
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
