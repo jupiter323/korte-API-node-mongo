@@ -1,29 +1,27 @@
 var mongoose = require('mongoose');
 
 var UserSchema = new mongoose.Schema({
-    email: {
-        type: String,
-        unique: false,
-        // required: true,
-        // trim: true
-    },
-    name: {
-        type: String,
-        // unique: true,
-        // required: true,
-        // trim: true
-    },
-    password: {
-        type: String,
-        // required: true
-    },
-    with: {
-        type: String,
-        // required: true,
-        // trim: true
-    }
-
+    email: String,
+    name: String,
+    password:String,
+    with: String,   
+    images:Array,
+    visible:String,
+    gender:String,
+    iGender:String,
+    occupation:String,
+    aboutMe:String,
+    indexOfHeight:String,
+    indexOfInterest:String,
+    ageMin:String,
+    ageMax:String,
+    notySwitchStatus:String,
+    soundSwitchStatus:String,
+    idVerifyStatus:String,
+    deleted:String,
 });
+
+
 var User = mongoose.model('User', UserSchema);
 module.exports = User;
 

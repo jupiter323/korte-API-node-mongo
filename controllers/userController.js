@@ -19,7 +19,7 @@ exports.uploadprofileimage = (req, res) => {
   let avatarImage = req.files.avatarImage;
 
   // Use the mv() method to place the file somewhere on your server
-  avatarImage.mv('/resources/images/user'+new Date().getTime()+ Math.floor(Math.random() * 100000)+'.jpg', function (err) {
+  avatarImage.mv('/resources/images/user' + new Date().getTime() + Math.floor(Math.random() * 100000) + '.jpg', function (err) {
     if (err)
       return res.status(500).send(err);
     res.send('File uploaded!');
@@ -27,7 +27,7 @@ exports.uploadprofileimage = (req, res) => {
 }
 
 exports.user_list = (req, res) => {
-  
+
   User.find({}, (err, users) => {
     if (err) throw err;
     res.json(users);
@@ -74,6 +74,21 @@ exports.user_login = (req, res) => {
       });
     } else {
       res.json({ success: false, err: "You are not registered." });//unsuccess
+    }
+  })
+}
+exports.user_profile = (req, res) => {
+  var userInfo = JSON.parse(req.body.data);
+  console.log(userInfo);
+  User.find({ email: userInfo.email }, (err, user) => {
+    if (err) throw err;
+    if (user.length != 0) {
+      User.findOneAndUpdate({ email: userInfo.email }, { $set: Object.assign(user[0],userInfo)}, { upsert: true }, function (err, user) {
+        if (err) { throw err; }       
+        res.json({ success: true });//success        
+      });
+    } else {
+      res.json({ success: false, err: "Couldn't find your profile." });//unsuccess
     }
   })
 }
