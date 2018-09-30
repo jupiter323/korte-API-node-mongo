@@ -19,6 +19,7 @@ var UserSchema = new mongoose.Schema({
     soundSwitchStatus:String,
     idVerifyStatus:String,
     deleted:String,
+    fcmToken:String
 });
 
 
